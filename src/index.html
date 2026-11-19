@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travers Smith search and navigation prototype — contents</title>
+  <link rel="home" id="wf-root" href="~/index.html">
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <main id="main">
+    <div class="container">
+      <div class="hub-brand">
+        <img src="~/assets/clerkswell-logo.png" alt="ClerksWell">
+      </div>
+
+      <h1>Travers Smith: search and navigation prototype</h1>
+      <p class="page-intro">A lo-fi, clickable model of the navigation and search we propose for traverssmith.com, built to be reacted to in the workshop and changed afterwards. It shows structure and behaviour only. Visual design is a later phase and is not represented here.</p>
+
+      <div class="wf-hub-meta">
+        <span>Version 1.4</span>
+        <span>4 November 2026</span>
+        <span>Status: Travers Smith&rsquo;s navigation, for review</span>
+      </div>
+
+      <p class="wf-note" data-note="1"><span class="wf-note-label">About the content</span>Service and sub-service names are Travers Smith&rsquo;s own, from the live A&ndash;Z. Every person, article, deal, event and document is fictional, shaped like the real site so the search can be judged against realistic content. Links that go nowhere go nowhere on purpose.</p>
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">How to use it in the room</span>This is ClerksWell&rsquo;s proposal, built from the review&rsquo;s findings, and it is here to be changed. The options it does not take are still recorded in the observations report, and the room can ask for any of them.</p>
+
+      <p class="wf-note" data-note="3"><span class="wf-note-label">Scope</span>Everything in this prototype is navigation or search: the header and its menus, the footer, the search box, the results page and the two section searches that exist today (People and Our thinking, today&rsquo;s Knowledge). Page templates and the components on them are not changed. Service, profile and other pages appear only as placeholders for the menus and search to land on.</p>
+
+      <h2 class="section-title">What changed in version 1.4</h2>
+      <p>Travers Smith&rsquo;s feedback of November 2026 asked for something cleaner and simpler, leading with the client rather than the firm&rsquo;s internal structure, and set out the navigation it wants. This version builds that navigation and nothing else, so the four switchable models are gone. They are kept at the tag <code>v1.3-models</code> if anyone wants to look back.</p>
+      <table class="wf-hub-table">
+        <thead><tr><th>#</th><th>Where</th><th>Change</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Main menu</td><td>Services, Find a lawyer, Our thinking, Our firm, Join us. Contact us is the only other link in the header.</td></tr>
+          <tr><td>2</td><td>Services menu</td><td>Leads with clients (asset managers, public companies, private companies, financial institutions), then services (transactions, complex advisory, disputes and investigations, full A&ndash;Z), then &lsquo;More than law&rsquo;. A search box finds any service, sub-service or sector.</td></tr>
+          <tr><td>3</td><td>Find a lawyer</td><td>A plain link to the People page, with no menu, as Macfarlanes does it.</td></tr>
+          <tr><td>4</td><td>Our thinking</td><td>Replaces Knowledge: five trending topics, insights by format (quick reads, long reads, podcasts, webinars, events), a larger featured item and a sign-up button.</td></tr>
+          <tr><td>5</td><td>Our firm, Join us</td><td>Replace About us and Careers, with the links Travers Smith listed.</td></tr>
+          <tr><td>6</td><td>Search</td><td>Filters in a sidebar only; the layout switch is gone. Surname letters removed everywhere. Nothing beneath the search box apart from the box itself.</td></tr>
+        </tbody>
+      </table>
+      <p class="wf-note query" data-note="4"><span class="wf-note-label">New pages</span>The client, service-group and &lsquo;More than law&rsquo; links lead to pages that do not exist yet. Each one opens a grey placeholder saying so. Writing them is content work for Travers Smith, outside the navigation and search scope.</p>
+
+      <h2 class="section-title" style="margin-top:2.5rem">What changed in version 1.2</h2>
+      <p>Changes agreed at Workshop 1 on 12 October, or fixes found during it. Some have since been overtaken by version 1.4. Version 1.1, as shown in the workshop, is kept at the tag <code>v1-workshop</code>.</p>
+      <table class="wf-hub-table">
+        <thead><tr><th>#</th><th>Where</th><th>Change</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>People menu</td><td>&lsquo;By office&rsquo; removed from the People menu, the People page, the filters and advanced search. Two offices don&rsquo;t justify a browse route.</td></tr>
+          <tr><td>2</td><td>People menu and filters</td><td>Position filter listed first, with Partner at the top, in the People menu, the people results and advanced search.</td></tr>
+          <tr><td>3</td><td>Results filters</td><td>A filter group with only one option left, and nothing ticked, is hidden.</td></tr>
+          <tr><td>4</td><td>Advanced search</td><td>Opens on the search you came from, or empty. Never reopens with conditions from an earlier visit, including after Back.</td></tr>
+          <tr><td>5</td><td>Search overlay</td><td>&lsquo;Get in touch&rsquo; goes to Contact us, not to People, so it no longer duplicates Find a lawyer.</td></tr>
+          <tr><td>6</td><td>Search overlay</td><td>&lsquo;Popular searches&rsquo; renamed &lsquo;Suggested searches&rsquo; and annotated as editor-curated, informed by click-through analytics. Never automatic; never names people.</td></tr>
+          <tr><td>7</td><td>Knowledge</td><td>Article and Briefing shown as one type (Briefing). Subject to Travers Smith sign-off.</td></tr>
+          <tr><td>8</td><td>Knowledge</td><td>Annotated as &lsquo;name TBC&rsquo; in the menu and on its page.</td></tr>
+          <tr><td>9</td><td>Every menu</td><td>An explicit &lsquo;overview &rarr;&rsquo; link to each section&rsquo;s landing page. Every top-level section keeps one.</td></tr>
+          <tr><td>10</td><td>Services menu</td><td>Tagging model annotated: one service can sit under several types of work, and the menu filter matches both.</td></tr>
+          <tr><td>11</td><td>People menu</td><td>Surname A&ndash;Z annotated as desktop only unless the design phase can make it work on a phone.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title" style="margin-top:2.5rem">What it proposes</h2>
+      <table class="wf-hub-table">
+        <thead><tr><th>Area</th><th>Proposal</th><th>Option</th></tr></thead>
+        <tbody>
+          <tr><td>Reaching the service estate</td><td>The Services menu leads with client types and a handful of service groups. Every practice, sub-service and sector is one search away in the menu&rsquo;s own search box, and the full A&ndash;Z is linked from the menu and the footer.</td><td>A2, revised</td></tr>
+          <tr><td>Navigation model</td><td>One panel pattern for every primary item: an overview link, then the links. Our thinking adds one featured item.</td><td>B1</td></tr>
+          <tr><td></td><td>Primary items as Travers Smith set them: Services, Find a lawyer, Our thinking, Our firm, Join us. A footer that extends the menu.</td><td>B2, revised</td></tr>
+          <tr><td></td><td>Find a lawyer as a top-level link, and search always in the header.</td><td>B3</td></tr>
+          <tr><td>Search</td><td>One index behind every search box, with every search capability in the search proposal.</td><td>C4</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title" style="margin-top:2.5rem">Where to look</h2>
+      <ul class="wf-hub-list">
+        <li><a href="~/pages/home.html">Header, menus and footer</a> <span class="wf-req">R01&ndash;R07, R11</span><p>Start here. The page body is the existing home page; everything to try is in the header and footer.</p></li>
+        <li><a href="~/pages/search.html">Site search and the browse view</a> <span class="wf-req">R20&ndash;R40</span><p>The unified results page. With no query it becomes a browsable, categorised view of everything.</p></li>
+        <li><a href="~/pages/search.html?type=people&amp;scope=people">People directory</a> <span class="wf-req">R28, R41</span><p>The same search with a People scope: a position filter, and a chip that widens it to the whole site.</p></li>
+        <li><a href="~/pages/search.html?type=knowledge&amp;scope=knowledge">Our thinking index</a> <span class="wf-req">R28</span><p>The same search scoped to Our thinking: quick reads, long reads, podcasts and webinars.</p></li>
+        <li><a href="~/pages/advanced-search.html">Advanced search</a> <span class="wf-req">R33</span><p>Visual query builder with a live count and a plain-English readout.</p></li>
+        <li><a href="~/pages/service.html?id=pensions-de-risking-and-insured-solutions">A destination page</a> <span class="wf-req">R09, R12</span><p>An existing sub-service page, reached from the menu. Unchanged, apart from a breadcrumb that follows its place in the menu.</p></li>
+        <li><a href="~/pages/patterns.html">How other firms do it</a> <span class="wf-req">v1.3</span><p>About the prototype rather than part of the site: how ten firms organise their menus.</p></li>
+        <li><a href="~/pages/search-configuration.html">How search is configured</a> <span class="wf-req">R42</span><p>About the prototype rather than part of the site: ranking tiers, synonyms, facets and promoted results, read live from its configuration.</p></li>
+      </ul>
+
+      <h2 class="section-title" style="margin-top:2.5rem">The search proposal, feature by feature</h2>
+      <p>The capabilities in <em>Smarter site search for traverssmith.com</em>, and where to try them. One is left out because it would change a page template rather than search.</p>
+      <table class="wf-hub-table">
+        <thead><tr><th>#</th><th>Capability</th><th>Try this</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>One search box, ranked the way a law firm needs, matches highlighted</td><td><a href="~/pages/search.html?q=private%20equity">private equity</a>: the service first, then the people, then insights. <a href="~/pages/search.html?q=Eleanor%20Hartwell">Eleanor Hartwell</a>: her profile first.</td></tr>
+          <tr><td>2</td><td>Facets with live counts in a sidebar, removable chips, other categories always counted, state in the URL</td><td><a href="~/pages/search.html?q=private%20equity&amp;type=people">private equity, People tab</a>, then tick Partner, remove the chip, and copy the link.</td></tr>
+          <tr><td>3</td><td>Every section keeps its own search, on the same engine, widened in one click</td><td><a href="~/pages/search.html?type=people&amp;scope=people">People</a> and <a href="~/pages/search.html?type=knowledge&amp;scope=knowledge">Our thinking</a>. <a href="~/pages/search.html?q=sanctions&amp;type=people&amp;scope=people">sanctions, People only</a> shows what the scope leaves out.</td></tr>
+          <tr><td>4</td><td>Typeahead from the firm&rsquo;s taxonomy</td><td>Type <code>priv</code>, <code>gdpr</code> or <code>share sch</code> in any search box, including the one in the header.</td></tr>
+          <tr><td>5</td><td>Typo correction and legal-language synonyms</td><td><a href="~/pages/search.html?q=litagation">litagation</a>, <a href="~/pages/search.html?q=data%20protection">data protection</a>, <a href="~/pages/search.html?q=share%20schemes">share schemes</a>, <a href="~/pages/search.html?q=ai">ai</a>.</td></tr>
+          <tr><td>6</td><td>PDFs searchable by their text, not their filename</td><td><a href="~/pages/search.html?q=monitoring%20software">monitoring software</a>: found on page 6 of a hybrid working guide.</td></tr>
+          <tr><td>7</td><td>Advanced query builder</td><td><a href="~/pages/advanced-search.html">Advanced search</a>.</td></tr>
+          <tr><td>8</td><td>Browsable, categorised view of everything</td><td><a href="~/pages/search.html">Search with no query</a>.</td></tr>
+          <tr><td>9</td><td>Connected profile pages</td><td>Not included. Links and a related-people panel on the profile page would change the profile template, which this work does not touch. Recorded in the report&rsquo;s backlog.</td></tr>
+          <tr><td>10</td><td>Sorting that fits how legal content ages</td><td><a href="~/pages/search.html?type=knowledge&amp;scope=knowledge&amp;sort=year">Our thinking by publication year</a>; also newest, oldest, A&ndash;Z.</td></tr>
+          <tr><td>11</td><td>Further: promoted results</td><td><a href="~/pages/search.html?q=careers">careers</a> (later phase, shown for discussion).</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title" style="margin-top:2.5rem">Beyond a first phase: listed, not built</h2>
+      <p>Proven on the same engine elsewhere: location-aware search, reference-format matching, sources outside the CMS. To be scoped: search analytics, saved searches and alerts, Word and PowerPoint text, editor-maintained synonyms, a semantic layer. The default answer for each is no; The workshop and the written feedback afterwards record the answer rather than assuming it.</p>
+
+      <h2 class="section-title" style="margin-top:2.5rem">Modules</h2>
+      <ul class="wf-hub-list">
+        <li><a href="~/modules/library.html">Module library</a><p>Every reusable component in this prototype, shown once, with its behaviour annotated.</p></li>
+      </ul>
+
+      <h2 class="section-title" style="margin-top:2.5rem">How to review this</h2>
+      <ul class="wf-hub-list">
+        <li><p>Yellow notes explain behaviour a screenshot cannot show. Red notes are questions we need answered. They are hidden when a page first opens; select &lsquo;Show annotations&rsquo; at the bottom right to see them, and they stay on as you move between pages.</p></li>
+        <li><p>Menus open on hover, focus or click, and close with Escape. Everything works from the keyboard.</p></li>
+        <li><p>Narrow the browser, or open it on a phone, to see the same navigation at mobile width.</p></li>
+        <li><p>Requirements R01&ndash;R51 are listed in <code>requirements/requirements.md</code>; every block in the pages names the requirement it serves.</p></li>
+      </ul>
+    </div>
+  </main>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>
