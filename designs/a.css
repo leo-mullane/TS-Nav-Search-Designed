@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Design A — "Linear"
+   After Linklaters: clean, simple, intuitive. White throughout, black type
+   in light weights, hairline rules, Oxford blue for links and a single
+   turquoise line to mark where you are. No colour blocks at all.
+   ========================================================================== */
+
+/* Header: one white bar, hairline beneath */
+header.sticky { background: var(--ts-white); border-bottom: 1px solid var(--ts-rule); }
+.nav-primary { background: var(--ts-white); border-bottom: 0; padding: 1.125rem 0 0.25rem; }
+.utility-list a { color: var(--ts-black); font-weight: 300; font-size: 0.9375rem; }
+.nav-secondary { background: var(--ts-white); border-bottom: 0; }
+.nav-secondary .nav-list { gap: 0.75rem; }
+.nav-secondary .nav-link { color: var(--ts-black); padding: 1rem 0.5rem 1.125rem; border-bottom: 2px solid transparent; }
+.nav-secondary .nav-link:hover { color: var(--ts-oxford); text-decoration: none; border-bottom-color: var(--ts-rule); }
+.nav-item.open > .nav-link { border-bottom-color: var(--ts-turquoise); color: var(--ts-black); }
+
+/* Search: a quiet outline pill in the header */
+.header-actions .btn { background: transparent; color: var(--ts-black); border-color: var(--ts-black); }
+.header-actions .btn:hover { background: var(--ts-black); color: var(--ts-white); }
+
+/* Mega panels: white sheet, full width under the header, generous space */
+.nav-flyout.mega {
+  border: 0; border-top: 1px solid var(--ts-rule); border-bottom: 1px solid var(--ts-rule);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.06); padding: 2rem 2.5rem 2.5rem; left: 0; right: 0;
+}
+.flyout-backdrop { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(2px); }
+.mega-head { border-bottom: 1px solid var(--ts-black); padding-bottom: 1.25rem; margin-bottom: 1.75rem; }
+.mega-head .mega-overview { font-size: 1.5rem; font-weight: 300 !important; color: var(--ts-black); }
+.mega-head .mega-overview:hover { color: var(--ts-oxford); }
+/* The Services search: a single underline, no box */
+.mega-head .mega-filter input {
+  border: 0; border-bottom: 1px solid var(--ts-black); padding: 0.625rem 0; font-size: 1.0625rem; font-weight: 300; background: transparent;
+}
+.mega-head .mega-filter input:focus { outline: 0; border-bottom: 2px solid var(--ts-oxford); }
+.mega-col h5 { margin-bottom: 1rem; }
+.nav-flyout.mega .mega-col li a { color: var(--ts-black); padding: 0.3125rem 0; font-size: 1.0625rem; }
+.nav-flyout.mega .mega-col li a:hover { color: var(--ts-oxford); background: none; text-decoration: underline; }
+.mega-grid.cols-3 { gap: 2.5rem; }
+.mega-grid.cols-3 .mega-col + .mega-col { border-left: 1px solid var(--ts-rule); padding-left: 2.5rem; }
+.mega-featured { border-left: 1px solid var(--ts-rule); padding-left: 2.5rem; }
+.mega-featured .result-type { color: var(--ts-turquoise-dark); }
+.mega-featured-large .featured-title { font-weight: 300; font-size: 1.375rem; line-height: 1.3; }
+.mega-featured-large .featured-title a { color: var(--ts-black); }
+
+/* Search overlay: a white sheet with one large, light input on a line */
+.wf-modal.search-overlay { background: rgba(255, 255, 255, 0.92); padding-top: 12vh; }
+.search-overlay .wf-modal-panel { max-width: 900px; background: transparent; padding: 1.5rem; }
+.search-overlay h2 { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ts-muted); margin-bottom: 1rem; }
+.search-overlay input[type="search"] {
+  border: 0; border-bottom: 1px solid var(--ts-black); background: transparent; font-size: 2.25rem; font-weight: 300; padding: 0.5rem 0;
+}
+.search-overlay input[type="search"]:focus { outline: 0; border-bottom: 2px solid var(--ts-oxford); }
+.search-overlay .search-row { align-items: flex-end; gap: 1.5rem; }
+
+/* Results page */
+.search-hero { background: transparent; border: 0; padding: 0; margin: 1rem 0 1.5rem; }
+.search-hero .search-row input { border: 0; border-bottom: 1px solid var(--ts-black); font-size: 1.75rem; font-weight: 300; padding: 0.5rem 0; }
+.search-hero .search-row input:focus { outline: 0; border-bottom: 2px solid var(--ts-oxford); }
+.search-hero .search-row { align-items: flex-end; gap: 1.5rem; }
+.cat-tabs { border-bottom: 1px solid var(--ts-rule); gap: 1.5rem; }
+.cat-tab { padding: 0.75rem 0; border: 0; border-bottom: 2px solid transparent; border-radius: 0; color: var(--ts-black); }
+.cat-tab[aria-pressed="true"] { border: 0; border-bottom: 2px solid var(--ts-turquoise); background: none; font-weight: 400; margin-bottom: -1px; }
+.facet { border-top-color: var(--ts-rule); }
+.result { border-bottom-color: var(--ts-rule); padding: 1.5rem 0; }
+
+/* Footer: light grey, ruled */
+footer { background: var(--ts-light-grey); border-top: 1px solid var(--ts-rule); }
+.footer-column a { color: var(--ts-black); }

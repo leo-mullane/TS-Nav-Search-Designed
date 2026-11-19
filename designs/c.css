@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Design C — "Dark with accent"
+   After Deloitte and EY: dark colours with one strong accent, very clear
+   language and layout. The black header the live site already has, menus
+   that open in Oxford blue, and turquoise as the single accent. The dark is
+   kept to the header and the menus; every page below stays white, so this
+   is a frame, not a block of colour.
+   ========================================================================== */
+
+/* Header: black, as today */
+header.sticky { background: var(--ts-black); border-bottom: 0; }
+.nav-primary { background: var(--ts-black); border-bottom: 0; padding: 1rem 0 0.25rem; }
+.ts-wordmark { color: var(--ts-white); }
+.utility-list a { color: var(--ts-white); font-weight: 300; font-size: 0.9375rem; }
+.utility-list a:hover { color: var(--ts-turquoise); }
+.nav-secondary { background: var(--ts-black); border-bottom: 0; }
+.nav-secondary .nav-list { gap: 0.75rem; }
+.nav-secondary .nav-link { color: var(--ts-white); font-weight: 300; padding: 1rem 0.5rem 1.125rem; border-bottom: 2px solid transparent; }
+.nav-secondary .nav-link:hover { color: var(--ts-turquoise); text-decoration: none; }
+.nav-item.open > .nav-link { border-bottom-color: var(--ts-turquoise); color: var(--ts-white); }
+.nav-secondary :focus-visible, .nav-primary :focus-visible, .nav-flyout :focus-visible { outline-color: var(--ts-turquoise); }
+.header-actions .btn { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+.header-actions .btn:hover { background: var(--ts-white); border-color: var(--ts-white); color: var(--ts-black); }
+.menu-toggle.btn-secondary { color: var(--ts-white); border-color: var(--ts-white); }
+
+/* Mega panels: Oxford blue, white text, turquoise accent */
+.nav-flyout.mega {
+  left: 0; right: 0; background: var(--ts-oxford); color: var(--ts-white); border: 0;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3); padding: 2rem 2.5rem 2.5rem;
+}
+.flyout-backdrop { background: rgba(0, 0, 0, 0.45); }
+.mega-head { border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 1.25rem; margin-bottom: 1.75rem; }
+.mega-head .mega-overview { color: var(--ts-white); font-size: 1.5rem; font-weight: 300 !important; }
+.mega-head .mega-overview:hover { color: var(--ts-turquoise); }
+.mega-head .mega-filter input {
+  background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.35); color: var(--ts-white);
+  padding: 0.75rem 1rem; font-size: 1rem; font-weight: 300;
+}
+.mega-head .mega-filter input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.mega-head .mega-filter input:focus { outline: 2px solid var(--ts-turquoise); border-color: var(--ts-turquoise); }
+.mega-col h5 { color: var(--ts-turquoise); }
+.mega-col h5 a { color: var(--ts-turquoise); }
+.nav-flyout.mega .mega-col li a { color: var(--ts-white); }
+.nav-flyout.mega .mega-col li a:hover { color: var(--ts-turquoise); background: none; text-decoration: none; }
+.nav-sub { color: rgba(255, 255, 255, 0.7); }
+.svc-count { color: rgba(255, 255, 255, 0.7); }
+.mega-grid.cols-3 { gap: 2.5rem; }
+.mega-featured { border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 2.5rem; }
+.mega-featured .result-type, .mega-featured .wf-meta { color: rgba(255, 255, 255, 0.75); }
+.mega-featured-large .featured-title { font-weight: 300; font-size: 1.375rem; line-height: 1.3; }
+.mega-featured-large .featured-title a { color: var(--ts-white); }
+.mega-featured-large .featured-title a:hover { color: var(--ts-turquoise); }
+.nav-flyout.mega .wf-placeholder { background: linear-gradient(135deg, #1A3760, #2C5A6E); color: rgba(255, 255, 255, 0.8); }
+.nav-flyout.mega .btn-secondary { color: var(--ts-white); border-color: var(--ts-white); }
+.nav-flyout.mega .btn-secondary:hover { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+/* Service search results inside the dark menu */
+.nav-flyout.mega .svc-row a { color: var(--ts-white); }
+.nav-flyout.mega .svc-row a:hover { color: var(--ts-turquoise); }
+.nav-flyout.mega .svc-children { border-left-color: var(--ts-turquoise); }
+.nav-flyout.mega .svc-children li a { color: rgba(255, 255, 255, 0.85); }
+.nav-flyout.mega .svc-toggle { background: transparent; color: var(--ts-white); border-color: rgba(255, 255, 255, 0.4); }
+.nav-flyout.mega .svc-empty { color: rgba(255, 255, 255, 0.8); }
+.nav-flyout.mega .svc-empty a { color: var(--ts-turquoise); }
+
+/* Search overlay: full screen, Oxford blue, one large light input */
+.wf-modal.search-overlay { background: var(--ts-oxford); padding-top: 14vh; }
+.search-overlay .wf-modal-panel { background: transparent; color: var(--ts-white); max-width: 960px; padding: 1.5rem; overflow: visible; }
+.search-overlay h2 { color: var(--ts-turquoise); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+.search-overlay .wf-modal-close { color: var(--ts-white); font-size: 2rem; }
+.search-overlay input[type="search"] {
+  background: transparent; border: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.6); color: var(--ts-white);
+  font-size: 2.5rem; font-weight: 200; padding: 0.5rem 0;
+}
+.search-overlay input[type="search"]::placeholder { color: rgba(255, 255, 255, 0.55); }
+.search-overlay input[type="search"]:focus { outline: 0; border-bottom: 2px solid var(--ts-turquoise); }
+.search-overlay .search-row { align-items: flex-end; gap: 1.5rem; }
+.search-overlay .btn { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+.search-overlay .btn:hover { background: var(--ts-white); border-color: var(--ts-white); }
+.search-overlay :focus-visible { outline-color: var(--ts-turquoise); }
+
+/* Results page: white, with Oxford blue for structure and turquoise for state */
+.search-hero { background: var(--ts-oxford); border: 0; padding: 1.75rem; color: var(--ts-white); }
+.search-hero .search-row input { background: var(--ts-white); border: 0; font-size: 1.25rem; padding: 0.875rem 1rem; }
+.search-hero .btn { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+.search-hero .btn:hover { background: var(--ts-white); border-color: var(--ts-white); }
+.cat-tabs { border-bottom: 1px solid var(--ts-black); gap: 1.25rem; }
+.cat-tab { padding: 0.75rem 0; border: 0; border-bottom: 3px solid transparent; border-radius: 0; color: var(--ts-black); }
+.cat-tab[aria-pressed="true"] { border: 0; border-bottom: 3px solid var(--ts-turquoise); background: none; font-weight: 500; margin-bottom: -1px; }
+.facet legend { color: var(--ts-oxford); }
+.result h3 a:hover { color: var(--ts-oxford); text-decoration-color: var(--ts-turquoise); }
+
+/* Footer: black */
+footer { background: var(--ts-black); border-top: 0; color: #CFCFCF; }
+.footer-column h4 { color: var(--ts-turquoise); }
+.footer-column a { color: #E5E5E5; }
+.footer-column a:hover { color: var(--ts-turquoise); }
+.footer-bottom { border-top-color: #333; color: #A8A8A8; }

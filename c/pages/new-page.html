@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-design="c">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposed new page — Travers Smith prototype</title>
+  <link rel="home" id="wf-root" href="../index.html">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="sticky">
+
+    <!-- Secondary nav: Contact us only (client feedback, November 2026) -->
+    <nav class="nav-primary" aria-label="Secondary">
+      <div class="container site-bar">
+        <a href="../pages/home.html" aria-label="Travers Smith home"><span class="wf-placeholder logo">Travers Smith logo</span></a>
+        <ul class="utility-list">
+          <li><a href="../pages/existing.html?page=contact">Contact us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Primary nav: Services, Find a lawyer, Our thinking, Our firm, Join us (client feedback, November 2026) -->
+    <nav class="nav-secondary" aria-label="Primary">
+      <div class="container">
+        <button type="button" class="btn btn-secondary btn-small menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+
+        <ul class="nav-list" id="primary-menu">
+
+          <!-- Services: leads with clients, then services, then more than law. One search box over every service (R01, R02) -->
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#">Services &#9662;</a>
+            <div class="nav-flyout mega" role="region" aria-label="Services menu">
+              <div class="mega-head">
+                <a class="mega-overview" href="../pages/existing.html?page=services">Services overview &rarr;</a>
+                <div class="mega-filter">
+                  <label class="visually-hidden" for="mega-svc-filter">Search our services</label>
+                  <input type="search" id="mega-svc-filter" data-svc-filter="mega-tree" data-svc-swap="mega-svc-browse" placeholder="Search our services, e.g. &lsquo;Pensions&rsquo;, &lsquo;Fundraising&rsquo;, &lsquo;Defence&rsquo;" autocomplete="off">
+                </div>
+              </div>
+              <div id="mega-svc-browse" class="mega-grid cols-3">
+                <div class="mega-col">
+                  <h5>Clients</h5>
+                  <ul>
+                    <li><a href="../pages/new-page.html?kind=client&amp;title=Asset%20managers">Asset managers <span class="nav-sub">including private equity</span></a></li>
+                    <li><a href="../pages/new-page.html?kind=client&amp;title=Public%20companies">Public companies</a></li>
+                    <li><a href="../pages/new-page.html?kind=client&amp;title=Private%20companies">Private companies</a></li>
+                    <li><a href="../pages/new-page.html?kind=client&amp;title=Financial%20institutions">Financial institutions</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Services</h5>
+                  <ul>
+                    <li><a href="../pages/new-page.html?kind=group&amp;title=Transactions">Transactions</a></li>
+                    <li><a href="../pages/new-page.html?kind=group&amp;title=Complex%20advisory">Complex advisory</a></li>
+                    <li><a href="../pages/new-page.html?kind=group&amp;title=Disputes%20%26%20investigations">Disputes &amp; investigations</a></li>
+                    <li><a href="../pages/existing.html?page=services">Full A&ndash;Z <span class="svc-count" data-count="services"></span></a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>More than law</h5>
+                  <ul>
+                    <li><a href="../pages/new-page.html?kind=more&amp;title=AI%20%26%20innovation">AI &amp; innovation</a></li>
+                    <li><a href="../pages/new-page.html?kind=more&amp;title=Business%20solutions">Business solutions</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Typing in the box swaps the three columns for matching services and sub-services -->
+              <div id="mega-tree" class="mega-results" data-render="service-tree" data-include-sectors hidden></div>
+              <p class="wf-note wf-note-compact" data-note="N"><span class="wf-note-label">Search box</span>Typing replaces the three columns with every matching service and sub-service, and understands common alternatives: &lsquo;fundraising&rsquo; finds the funds practices, &lsquo;GDPR&rsquo; finds data protection. Clear the box to get the columns back.</p>
+            </div>
+          </li>
+
+          <!-- Find a lawyer: a plain link to the People landing page, no menu (as Macfarlanes) -->
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/people.html">Find a lawyer</a>
+          </li>
+
+          <!-- Our thinking: trending topics, insights by format, one featured item, sign-up -->
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#">Our thinking &#9662;</a>
+            <div class="nav-flyout mega" role="region" aria-label="Our thinking menu">
+              <div class="mega-head">
+                <a class="mega-overview" href="../pages/knowledge.html">Our thinking overview &rarr;</a>
+                <a class="btn btn-secondary btn-small mega-signup" href="../pages/existing.html?page=subscribe">Sign up for updates</a>
+              </div>
+              <div class="mega-grid cols-3-featured">
+                <div class="mega-col">
+                  <h5>Trending topics</h5>
+                  <ul data-render="topic-links"></ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Insights</h5>
+                  <ul>
+                    <li><a href="../pages/search.html?type=knowledge&amp;scope=knowledge&amp;ktype=Quick%20read">Quick reads</a></li>
+                    <li><a href="../pages/search.html?type=knowledge&amp;scope=knowledge&amp;ktype=Long%20read">Long reads</a></li>
+                    <li><a href="../pages/search.html?type=knowledge&amp;scope=knowledge&amp;ktype=Podcast">Podcasts</a></li>
+                    <li><a href="../pages/search.html?type=knowledge&amp;scope=knowledge&amp;ktype=Webinar">Webinars</a></li>
+                    <li><a href="../pages/search.html?type=events&amp;sort=newest">Events</a></li>
+                  </ul>
+                </div>
+                <div class="mega-featured mega-featured-large">
+                  <div class="wf-placeholder ratio-16-9">Image 16:9</div>
+                  <p class="result-type">Featured</p>
+                  <p class="featured-title"><a href="#">Private Capital Forum 2026: what sponsors told us about the year ahead</a></p>
+                  <p class="wf-meta">One editor-chosen item, given more room and an image.</p>
+                </div>
+              </div>
+              <p class="wf-note wf-note-compact" data-note="N"><span class="wf-note-label">Curated</span>Editors choose and order the trending topics. Each opens the insights on that topic.</p>
+            </div>
+          </li>
+
+          <!-- Our firm -->
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#">Our firm &#9662;</a>
+            <div class="nav-flyout mega" role="region" aria-label="Our firm menu">
+              <div class="mega-head">
+                <a class="mega-overview" href="../pages/existing.html?page=about">Our firm overview &rarr;</a>
+              </div>
+              <div class="mega-grid cols-3">
+                <div class="mega-col">
+                  <ul>
+                    <li><a href="#">Our culture</a></li>
+                    <li><a href="#">Our history</a></li>
+                    <li><a href="#">International</a></li>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="../pages/search.html?type=news&amp;sort=newest">News and press releases</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5><a href="#">Responsible business</a></h5>
+                  <ul>
+                    <li><a href="#">Environment</a></li>
+                    <li><a href="#">CSR</a></li>
+                    <li><a href="#">D&amp;I</a></li>
+                    <li><a href="#">Pro bono</a></li>
+                    <li><a href="#">Our charities</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Join us -->
+          <li class="nav-item has-mega">
+            <a class="nav-link" href="#">Join us &#9662;</a>
+            <div class="nav-flyout mega" role="region" aria-label="Join us menu">
+              <div class="mega-head">
+                <a class="mega-overview" href="../pages/existing.html?page=careers">Join us overview &rarr;</a>
+              </div>
+              <div class="mega-grid cols-3">
+                <div class="mega-col">
+                  <ul>
+                    <li><a href="#">Early careers</a></li>
+                    <li><a href="#">Qualified lawyers</a></li>
+                    <li><a href="#">Business services</a></li>
+                    <li><a href="#">Vacancies</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="header-actions">
+          <button type="button" class="btn btn-small" data-modal-open="search-overlay">Search</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="flyout-backdrop" aria-hidden="true"></div>
+
+  <!-- Search overlay: one box over the whole index, with typeahead (R20, R29). Nothing else beneath the box (client feedback, November 2026) -->
+  <div class="wf-modal search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-labelledby="search-overlay-title">
+    <div class="wf-modal-panel">
+      <button type="button" class="wf-modal-close" aria-label="Close search">&times;</button>
+      <h2 id="search-overlay-title">Search Travers Smith</h2>
+      <form action="../pages/search.html" method="get" role="search">
+        <div class="search-row">
+          <div class="ta-wrap">
+            <label class="visually-hidden" for="overlay-q">Search people, services and insights</label>
+            <input type="search" id="overlay-q" name="q" data-typeahead placeholder="Search people, services, insights and documents" autocomplete="off">
+          </div>
+          <button class="btn" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <!-- Destination page: a NEW page the Services menu links to (client, service group, More than law). Not built by this work -->
+      <p class="wf-note query" data-note="1"><span class="wf-note-label">New page, not part of this work</span>This page does not exist today. The new Services menu links to one page like this for each client type, service group and &lsquo;More than law&rsquo; area. Each needs writing, and a decision on which template it uses. That is content work for Travers Smith, outside the navigation and search scope.</p>
+      <div id="new-page-app"></div>
+    </div>
+  </main>
+
+  <!-- Footer: secondary routes into the same IA; the A–Z of services is one click from every page (R03) -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../pages/existing.html?page=services">Full A&ndash;Z of services</a></li>
+            <li><a href="../pages/search.html?type=services">Search services and sectors</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>People</h4>
+          <ul>
+            <li><a href="../pages/people.html">Find a lawyer</a></li>
+            <li><a href="../pages/search.html?type=people&amp;scope=people&amp;position=Partner">Partners</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Our thinking</h4>
+          <ul>
+            <li><a href="../pages/knowledge.html">Our thinking</a></li>
+            <li><a href="../pages/search.html?type=events&amp;sort=newest">Events</a></li>
+            <li><a href="../pages/existing.html?page=subscribe">Sign up for updates</a></li>
+            <li><a href="../pages/advanced-search.html">Advanced search</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Our firm</h4>
+          <ul>
+            <li><a href="../pages/existing.html?page=about">Our firm</a></li>
+            <li><a href="../pages/existing.html?page=careers">Join us</a></li>
+            <li><a href="../pages/existing.html?page=contact">Contact us</a></li>
+            <li><a href="#">Legal and regulatory</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Travers Smith &mdash; search and navigation prototype v1.4</span>
+        <span>Wireframe: structure and behaviour only, not a design. Fictional people and content.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/engine.js"></script>
+  <script src="../js/wireframe.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/typeahead.js"></script>
+  <script src="../js/search-page.js"></script>
+  <script src="../js/pages.js"></script>
+  <script src="../js/builder.js"></script>
+
+  <script src="../js/design.js"></script>
+</body>
+</html>

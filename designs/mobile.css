@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Phone and tablet adjustments, applied after every design.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .mega-grid.cols-3 .mega-col + .mega-col { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .nav-flyout.mega { padding: 0.75rem 0 1.25rem; box-shadow: none; border: 0; }
+  .mega-head .mega-overview { font-size: 1.125rem; }
+  .mega-featured { border-left: 0; padding-left: 0; }
+  .mega-grid.cols-3, .mega-grid.cols-3-featured { gap: 1.25rem; }
+  .search-overlay input[type="search"] { font-size: 1.375rem; }
+  .search-hero .search-row input { font-size: 1.125rem; }
+  .search-overlay .wf-modal-panel { padding: 1.5rem 1rem; }
+  .cat-tabs { gap: 0.75rem; }
+  .design-switch { left: 0.5rem; bottom: 0.5rem; font-size: 0.75rem; }
+
+  /* Design B: on a phone the three groups simply stack, as in the wireframe */
+  #mega-svc-browse.has-svc-tabs { display: block; border-top: 0; }
+  .svc-tabs { display: none; }
+  .svc-tabpanels { padding: 0; }
+  .svc-tabpanel { display: block; margin-bottom: 1.25rem; }
+  .svc-tabpanel h5 { display: block; }
+  .svc-tabpanel ul { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .nav-flyout.mega .svc-tabpanel li a { font-size: 1.0625rem; padding: 0.5rem 0; }
+
+  /* Design C: the open phone menu stays on the black header */
+  html[data-design="c"] .nav-secondary .nav-item { border-top-color: #333; }
+  html[data-design="c"] .nav-flyout.mega { background: var(--ts-black); }
+}

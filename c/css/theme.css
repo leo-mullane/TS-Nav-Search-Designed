@@ -1,0 +1,292 @@
+/* ==========================================================================
+   Travers Smith design layer: shared foundation (all three designs)
+
+   From the Travers Smith design system (measured from traverssmith.com) and
+   the firm's design requirements of November 2026:
+   - black, Oxford blue and turquoise predominantly, with tints
+   - no aubergine, fossil or copper
+   - away from heavy block colour; lighter weights and line work
+   - Cera Pro, as today (licensed: Outfit is the visible stand-in here)
+   - square panels, pill buttons, little or no iconography in the nav
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --ts-black: #000000;
+  --ts-white: #FFFFFF;
+  --ts-oxford: #001F49;
+  --ts-oxford-light: #667992;
+  --ts-oxford-25: #BFC7D2;
+  --ts-oxford-10: #E6E9ED;
+  --ts-turquoise: #82C7B3;
+  --ts-turquoise-25: #E0F1EC;
+  --ts-turquoise-dark: #2F7D69;  /* turquoise darkened to pass AA as text on white (4.9:1) */
+  --ts-light-grey: #F7F6F3;
+  --ts-mid-grey: #979797;
+  --ts-rule: #DCDAD3;
+  --ts-muted: #4A4A47;
+
+  --ts-font: "Cera Pro", "CeraPRO", "Outfit", "Helvetica Neue", Arial, sans-serif;
+
+  /* Re-point the wireframe's greyscale variables at the brand. Everything
+     structural in base.css and components.css follows. */
+  --wf-page: var(--ts-white);
+  --wf-surface: var(--ts-light-grey);
+  --wf-placeholder: var(--ts-oxford-10);
+  --wf-border: var(--ts-rule);
+  --wf-border-strong: var(--ts-mid-grey);
+  --wf-text: var(--ts-black);
+  --wf-text-muted: var(--ts-muted);
+  --wf-action: var(--ts-oxford);
+  --wf-action-hover: var(--ts-black);
+  --wf-radius: 0;
+  --wf-gutter: 1.5rem;
+  --wf-max-width: 1400px;
+}
+
+html { -webkit-font-smoothing: antialiased; }
+body { font-family: var(--ts-font); font-weight: 400; line-height: 1.5; }
+
+/* Lighter type throughout: headings 300 to 400, not 600 */
+h1, h2, h3, h4, h5, h6 { font-weight: 400; letter-spacing: -0.005em; }
+h1 { font-size: 2.5rem; font-weight: 300; line-height: 1.15; }
+.page-intro { font-size: 1.25rem; font-weight: 300; line-height: 1.45; color: var(--ts-black); }
+.section-title { font-weight: 400; font-size: 1.5rem; border-bottom: 1px solid var(--ts-black); }
+
+a { color: var(--ts-oxford); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--ts-black); }
+:focus-visible { outline: 2px solid var(--ts-oxford); outline-offset: 3px; }
+
+/* Pill buttons, as on the live site, with a lighter 1px line */
+.btn {
+  border-radius: 999px; background: var(--ts-black); border: 1px solid var(--ts-black); color: var(--ts-white);
+  font-weight: 500; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.75rem 1.75rem;
+}
+.btn:hover { background: var(--ts-oxford); border-color: var(--ts-oxford); color: var(--ts-white); }
+.btn-secondary { background: transparent; color: var(--ts-black); }
+.btn-secondary:hover { background: var(--ts-black); border-color: var(--ts-black); color: var(--ts-white); }
+.btn-small { padding: 0.5rem 1.25rem; font-size: 0.8125rem; }
+
+input[type="text"], input[type="email"], input[type="search"], select, textarea {
+  border: 1px solid var(--ts-mid-grey); border-radius: 0; font-family: var(--ts-font);
+}
+input[type="search"]:focus, input[type="text"]:focus, select:focus { outline: 2px solid var(--ts-oxford); outline-offset: 0; border-color: var(--ts-oxford); }
+
+/* Wordmark: a stand-in for the real logo file, drawn in type */
+.ts-wordmark { display: inline-block; font-weight: 600; font-size: 1.0625rem; line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ts-black); }
+.ts-wordmark span { display: block; padding-left: 1.35em; }
+.ts-wordmark:hover { color: inherit; }
+
+/* Images: editor-uploaded. A quiet tint with a label, never stock art */
+.wf-placeholder {
+  background: linear-gradient(135deg, var(--ts-oxford-10), var(--ts-turquoise-25));
+  border: 0; color: var(--ts-oxford); font-size: 0.6875rem; letter-spacing: 0.1em; font-weight: 500;
+}
+.wf-placeholder.unchanged {
+  background: var(--ts-light-grey); color: var(--ts-muted); font-size: 0.9375rem; letter-spacing: 0; font-weight: 300;
+}
+.wf-placeholder.avatar { border-radius: 0; background: linear-gradient(160deg, #D5DAE0, #9AA4B1); color: transparent; }
+
+/* Header basics shared by all designs */
+.nav-secondary .nav-link { font-weight: 400; font-size: 1rem; }
+.mega-col h5 { font-weight: 500; letter-spacing: 0.1em; font-size: 0.75rem; color: var(--ts-muted); }
+.nav-flyout.mega .mega-col li a { font-size: 1rem; font-weight: 300; }
+.nav-sub { font-weight: 300; }
+.mega-overview { font-weight: 400 !important; }
+.svc-toggle { border-radius: 999px; font-family: var(--ts-font); }
+.svc-children { border-left: 1px solid var(--ts-turquoise); }
+
+/* Search results: shared typographic polish */
+mark { background: var(--ts-turquoise-25); font-weight: 500; }
+.result h3 { font-weight: 400; font-size: 1.25rem; }
+.result h3 a { color: var(--ts-black); }
+.result h3 a:hover { color: var(--ts-oxford); }
+.result-type { color: var(--ts-turquoise-dark); font-weight: 600; letter-spacing: 0.1em; }
+.result-meta { color: var(--ts-muted); }
+.result.has-avatar { grid-template-columns: 64px minmax(0, 1fr); }
+.result .wf-placeholder.avatar { width: 64px; aspect-ratio: 4 / 5; }
+.facet legend { font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.facet-opt { font-weight: 300; font-size: 0.9375rem; }
+.facet-opt input { accent-color: var(--ts-oxford); }
+.chip { border-radius: 999px; background: var(--ts-white); font-weight: 300; }
+.chip .x { border: 0; background: var(--ts-oxford-10); }
+.chip.scope { border-style: solid; border-color: var(--ts-turquoise); background: var(--ts-turquoise-25); }
+.cat-tab { font-weight: 300; }
+.cat-tab .n { font-size: 0.8125rem; }
+.banner { border-color: var(--ts-rule); border-left: 3px solid var(--ts-turquoise); }
+.banner-muted { border-style: solid; }
+.sr-count { color: var(--ts-black); font-weight: 300; font-size: 1.0625rem; }
+.pagination button { border-radius: 999px; min-width: 2.5rem; }
+.pagination button[aria-current="page"] { background: var(--ts-black); border-color: var(--ts-black); }
+.browse-card { border-color: var(--ts-rule); }
+.browse-card h3 { font-weight: 400; }
+.zero { border-style: solid; border-color: var(--ts-rule); }
+.qb-readout { border-left-color: var(--ts-turquoise); }
+.aside-box { border-color: var(--ts-rule); }
+.breadcrumb-item a { color: var(--ts-muted); }
+
+/* Typeahead */
+.ta-list { border-radius: 0; border-color: var(--ts-rule); box-shadow: 0 12px 32px rgba(0, 31, 73, 0.12); }
+.ta-option { font-weight: 300; }
+.ta-option[aria-selected="true"], .ta-option:hover { background: var(--ts-turquoise-25); outline: 0; box-shadow: inset 3px 0 0 var(--ts-oxford); }
+.ta-group { color: var(--ts-turquoise-dark); }
+
+/* Footer: quiet, ruled */
+footer { margin-top: 5rem; }
+.footer-column h4 { font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-column a { font-weight: 300; }
+
+/* Annotations stay as prototype chrome, but in the brand face */
+.wf-note { font-family: var(--ts-font); }
+
+/* --------------------------------------------------------------------------
+   Design switcher (prototype chrome, not part of the site)
+   -------------------------------------------------------------------------- */
+.design-switch {
+  position: fixed; left: 1rem; bottom: 1rem; z-index: 1500; display: flex; align-items: center; gap: 0.25rem;
+  background: #212E4A; color: #fff; border-radius: 999px; padding: 0.3rem 0.4rem 0.3rem 0.875rem;
+  font: 500 0.8125rem/1 system-ui, -apple-system, 'Segoe UI', sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+.design-switch span { margin-right: 0.25rem; opacity: 0.85; }
+.design-switch a { color: #fff; text-decoration: none; padding: 0.35rem 0.65rem; border-radius: 999px; }
+.design-switch a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.design-switch a[aria-current="true"] { background: #F0574A; color: #fff; }
+.design-switch a:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+@media print { .design-switch { display: none; } }
+
+/* The browser's own clear button on search boxes, toned to the palette */
+input[type="search"]::-webkit-search-cancel-button { filter: grayscale(1); opacity: 0.6; cursor: pointer; }
+html[data-design="c"] .nav-flyout.mega input[type="search"]::-webkit-search-cancel-button,
+html[data-design="c"] .search-overlay input[type="search"]::-webkit-search-cancel-button { filter: grayscale(1) invert(1); }
+/* Wireframe captions that describe the layout rather than the content */
+.mega-featured-large .wf-meta { display: none; }
+
+/* ==========================================================================
+   Design C — "Dark with accent"
+   After Deloitte and EY: dark colours with one strong accent, very clear
+   language and layout. The black header the live site already has, menus
+   that open in Oxford blue, and turquoise as the single accent. The dark is
+   kept to the header and the menus; every page below stays white, so this
+   is a frame, not a block of colour.
+   ========================================================================== */
+
+/* Header: black, as today */
+header.sticky { background: var(--ts-black); border-bottom: 0; }
+.nav-primary { background: var(--ts-black); border-bottom: 0; padding: 1rem 0 0.25rem; }
+.ts-wordmark { color: var(--ts-white); }
+.utility-list a { color: var(--ts-white); font-weight: 300; font-size: 0.9375rem; }
+.utility-list a:hover { color: var(--ts-turquoise); }
+.nav-secondary { background: var(--ts-black); border-bottom: 0; }
+.nav-secondary .nav-list { gap: 0.75rem; }
+.nav-secondary .nav-link { color: var(--ts-white); font-weight: 300; padding: 1rem 0.5rem 1.125rem; border-bottom: 2px solid transparent; }
+.nav-secondary .nav-link:hover { color: var(--ts-turquoise); text-decoration: none; }
+.nav-item.open > .nav-link { border-bottom-color: var(--ts-turquoise); color: var(--ts-white); }
+.nav-secondary :focus-visible, .nav-primary :focus-visible, .nav-flyout :focus-visible { outline-color: var(--ts-turquoise); }
+.header-actions .btn { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+.header-actions .btn:hover { background: var(--ts-white); border-color: var(--ts-white); color: var(--ts-black); }
+.menu-toggle.btn-secondary { color: var(--ts-white); border-color: var(--ts-white); }
+
+/* Mega panels: Oxford blue, white text, turquoise accent */
+.nav-flyout.mega {
+  left: 0; right: 0; background: var(--ts-oxford); color: var(--ts-white); border: 0;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3); padding: 2rem 2.5rem 2.5rem;
+}
+.flyout-backdrop { background: rgba(0, 0, 0, 0.45); }
+.mega-head { border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 1.25rem; margin-bottom: 1.75rem; }
+.mega-head .mega-overview { color: var(--ts-white); font-size: 1.5rem; font-weight: 300 !important; }
+.mega-head .mega-overview:hover { color: var(--ts-turquoise); }
+.mega-head .mega-filter input {
+  background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.35); color: var(--ts-white);
+  padding: 0.75rem 1rem; font-size: 1rem; font-weight: 300;
+}
+.mega-head .mega-filter input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.mega-head .mega-filter input:focus { outline: 2px solid var(--ts-turquoise); border-color: var(--ts-turquoise); }
+.mega-col h5 { color: var(--ts-turquoise); }
+.mega-col h5 a { color: var(--ts-turquoise); }
+.nav-flyout.mega .mega-col li a { color: var(--ts-white); }
+.nav-flyout.mega .mega-col li a:hover { color: var(--ts-turquoise); background: none; text-decoration: none; }
+.nav-sub { color: rgba(255, 255, 255, 0.7); }
+.svc-count { color: rgba(255, 255, 255, 0.7); }
+.mega-grid.cols-3 { gap: 2.5rem; }
+.mega-featured { border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 2.5rem; }
+.mega-featured .result-type, .mega-featured .wf-meta { color: rgba(255, 255, 255, 0.75); }
+.mega-featured-large .featured-title { font-weight: 300; font-size: 1.375rem; line-height: 1.3; }
+.mega-featured-large .featured-title a { color: var(--ts-white); }
+.mega-featured-large .featured-title a:hover { color: var(--ts-turquoise); }
+.nav-flyout.mega .wf-placeholder { background: linear-gradient(135deg, #1A3760, #2C5A6E); color: rgba(255, 255, 255, 0.8); }
+.nav-flyout.mega .btn-secondary { color: var(--ts-white); border-color: var(--ts-white); }
+.nav-flyout.mega .btn-secondary:hover { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+/* Service search results inside the dark menu */
+.nav-flyout.mega .svc-row a { color: var(--ts-white); }
+.nav-flyout.mega .svc-row a:hover { color: var(--ts-turquoise); }
+.nav-flyout.mega .svc-children { border-left-color: var(--ts-turquoise); }
+.nav-flyout.mega .svc-children li a { color: rgba(255, 255, 255, 0.85); }
+.nav-flyout.mega .svc-toggle { background: transparent; color: var(--ts-white); border-color: rgba(255, 255, 255, 0.4); }
+.nav-flyout.mega .svc-empty { color: rgba(255, 255, 255, 0.8); }
+.nav-flyout.mega .svc-empty a { color: var(--ts-turquoise); }
+
+/* Search overlay: full screen, Oxford blue, one large light input */
+.wf-modal.search-overlay { background: var(--ts-oxford); padding-top: 14vh; }
+.search-overlay .wf-modal-panel { background: transparent; color: var(--ts-white); max-width: 960px; padding: 1.5rem; overflow: visible; }
+.search-overlay h2 { color: var(--ts-turquoise); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+.search-overlay .wf-modal-close { color: var(--ts-white); font-size: 2rem; }
+.search-overlay input[type="search"] {
+  background: transparent; border: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.6); color: var(--ts-white);
+  font-size: 2.5rem; font-weight: 200; padding: 0.5rem 0;
+}
+.search-overlay input[type="search"]::placeholder { color: rgba(255, 255, 255, 0.55); }
+.search-overlay input[type="search"]:focus { outline: 0; border-bottom: 2px solid var(--ts-turquoise); }
+.search-overlay .search-row { align-items: flex-end; gap: 1.5rem; }
+.search-overlay .btn { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+.search-overlay .btn:hover { background: var(--ts-white); border-color: var(--ts-white); }
+.search-overlay :focus-visible { outline-color: var(--ts-turquoise); }
+
+/* Results page: white, with Oxford blue for structure and turquoise for state */
+.search-hero { background: var(--ts-oxford); border: 0; padding: 1.75rem; color: var(--ts-white); }
+.search-hero .search-row input { background: var(--ts-white); border: 0; font-size: 1.25rem; padding: 0.875rem 1rem; }
+.search-hero .btn { background: var(--ts-turquoise); border-color: var(--ts-turquoise); color: var(--ts-black); }
+.search-hero .btn:hover { background: var(--ts-white); border-color: var(--ts-white); }
+.cat-tabs { border-bottom: 1px solid var(--ts-black); gap: 1.25rem; }
+.cat-tab { padding: 0.75rem 0; border: 0; border-bottom: 3px solid transparent; border-radius: 0; color: var(--ts-black); }
+.cat-tab[aria-pressed="true"] { border: 0; border-bottom: 3px solid var(--ts-turquoise); background: none; font-weight: 500; margin-bottom: -1px; }
+.facet legend { color: var(--ts-oxford); }
+.result h3 a:hover { color: var(--ts-oxford); text-decoration-color: var(--ts-turquoise); }
+
+/* Footer: black */
+footer { background: var(--ts-black); border-top: 0; color: #CFCFCF; }
+.footer-column h4 { color: var(--ts-turquoise); }
+.footer-column a { color: #E5E5E5; }
+.footer-column a:hover { color: var(--ts-turquoise); }
+.footer-bottom { border-top-color: #333; color: #A8A8A8; }
+
+/* ==========================================================================
+   Phone and tablet adjustments, applied after every design.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .mega-grid.cols-3 .mega-col + .mega-col { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .nav-flyout.mega { padding: 0.75rem 0 1.25rem; box-shadow: none; border: 0; }
+  .mega-head .mega-overview { font-size: 1.125rem; }
+  .mega-featured { border-left: 0; padding-left: 0; }
+  .mega-grid.cols-3, .mega-grid.cols-3-featured { gap: 1.25rem; }
+  .search-overlay input[type="search"] { font-size: 1.375rem; }
+  .search-hero .search-row input { font-size: 1.125rem; }
+  .search-overlay .wf-modal-panel { padding: 1.5rem 1rem; }
+  .cat-tabs { gap: 0.75rem; }
+  .design-switch { left: 0.5rem; bottom: 0.5rem; font-size: 0.75rem; }
+
+  /* Design B: on a phone the three groups simply stack, as in the wireframe */
+  #mega-svc-browse.has-svc-tabs { display: block; border-top: 0; }
+  .svc-tabs { display: none; }
+  .svc-tabpanels { padding: 0; }
+  .svc-tabpanel { display: block; margin-bottom: 1.25rem; }
+  .svc-tabpanel h5 { display: block; }
+  .svc-tabpanel ul { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .nav-flyout.mega .svc-tabpanel li a { font-size: 1.0625rem; padding: 0.5rem 0; }
+
+  /* Design C: the open phone menu stays on the black header */
+  html[data-design="c"] .nav-secondary .nav-item { border-top-color: #333; }
+  html[data-design="c"] .nav-flyout.mega { background: var(--ts-black); }
+}

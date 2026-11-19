@@ -1,0 +1,273 @@
+/* ==========================================================================
+   Travers Smith design layer: shared foundation (all three designs)
+
+   From the Travers Smith design system (measured from traverssmith.com) and
+   the firm's design requirements of November 2026:
+   - black, Oxford blue and turquoise predominantly, with tints
+   - no aubergine, fossil or copper
+   - away from heavy block colour; lighter weights and line work
+   - Cera Pro, as today (licensed: Outfit is the visible stand-in here)
+   - square panels, pill buttons, little or no iconography in the nav
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --ts-black: #000000;
+  --ts-white: #FFFFFF;
+  --ts-oxford: #001F49;
+  --ts-oxford-light: #667992;
+  --ts-oxford-25: #BFC7D2;
+  --ts-oxford-10: #E6E9ED;
+  --ts-turquoise: #82C7B3;
+  --ts-turquoise-25: #E0F1EC;
+  --ts-turquoise-dark: #2F7D69;  /* turquoise darkened to pass AA as text on white (4.9:1) */
+  --ts-light-grey: #F7F6F3;
+  --ts-mid-grey: #979797;
+  --ts-rule: #DCDAD3;
+  --ts-muted: #4A4A47;
+
+  --ts-font: "Cera Pro", "CeraPRO", "Outfit", "Helvetica Neue", Arial, sans-serif;
+
+  /* Re-point the wireframe's greyscale variables at the brand. Everything
+     structural in base.css and components.css follows. */
+  --wf-page: var(--ts-white);
+  --wf-surface: var(--ts-light-grey);
+  --wf-placeholder: var(--ts-oxford-10);
+  --wf-border: var(--ts-rule);
+  --wf-border-strong: var(--ts-mid-grey);
+  --wf-text: var(--ts-black);
+  --wf-text-muted: var(--ts-muted);
+  --wf-action: var(--ts-oxford);
+  --wf-action-hover: var(--ts-black);
+  --wf-radius: 0;
+  --wf-gutter: 1.5rem;
+  --wf-max-width: 1400px;
+}
+
+html { -webkit-font-smoothing: antialiased; }
+body { font-family: var(--ts-font); font-weight: 400; line-height: 1.5; }
+
+/* Lighter type throughout: headings 300 to 400, not 600 */
+h1, h2, h3, h4, h5, h6 { font-weight: 400; letter-spacing: -0.005em; }
+h1 { font-size: 2.5rem; font-weight: 300; line-height: 1.15; }
+.page-intro { font-size: 1.25rem; font-weight: 300; line-height: 1.45; color: var(--ts-black); }
+.section-title { font-weight: 400; font-size: 1.5rem; border-bottom: 1px solid var(--ts-black); }
+
+a { color: var(--ts-oxford); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { color: var(--ts-black); }
+:focus-visible { outline: 2px solid var(--ts-oxford); outline-offset: 3px; }
+
+/* Pill buttons, as on the live site, with a lighter 1px line */
+.btn {
+  border-radius: 999px; background: var(--ts-black); border: 1px solid var(--ts-black); color: var(--ts-white);
+  font-weight: 500; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.75rem 1.75rem;
+}
+.btn:hover { background: var(--ts-oxford); border-color: var(--ts-oxford); color: var(--ts-white); }
+.btn-secondary { background: transparent; color: var(--ts-black); }
+.btn-secondary:hover { background: var(--ts-black); border-color: var(--ts-black); color: var(--ts-white); }
+.btn-small { padding: 0.5rem 1.25rem; font-size: 0.8125rem; }
+
+input[type="text"], input[type="email"], input[type="search"], select, textarea {
+  border: 1px solid var(--ts-mid-grey); border-radius: 0; font-family: var(--ts-font);
+}
+input[type="search"]:focus, input[type="text"]:focus, select:focus { outline: 2px solid var(--ts-oxford); outline-offset: 0; border-color: var(--ts-oxford); }
+
+/* Wordmark: a stand-in for the real logo file, drawn in type */
+.ts-wordmark { display: inline-block; font-weight: 600; font-size: 1.0625rem; line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ts-black); }
+.ts-wordmark span { display: block; padding-left: 1.35em; }
+.ts-wordmark:hover { color: inherit; }
+
+/* Images: editor-uploaded. A quiet tint with a label, never stock art */
+.wf-placeholder {
+  background: linear-gradient(135deg, var(--ts-oxford-10), var(--ts-turquoise-25));
+  border: 0; color: var(--ts-oxford); font-size: 0.6875rem; letter-spacing: 0.1em; font-weight: 500;
+}
+.wf-placeholder.unchanged {
+  background: var(--ts-light-grey); color: var(--ts-muted); font-size: 0.9375rem; letter-spacing: 0; font-weight: 300;
+}
+.wf-placeholder.avatar { border-radius: 0; background: linear-gradient(160deg, #D5DAE0, #9AA4B1); color: transparent; }
+
+/* Header basics shared by all designs */
+.nav-secondary .nav-link { font-weight: 400; font-size: 1rem; }
+.mega-col h5 { font-weight: 500; letter-spacing: 0.1em; font-size: 0.75rem; color: var(--ts-muted); }
+.nav-flyout.mega .mega-col li a { font-size: 1rem; font-weight: 300; }
+.nav-sub { font-weight: 300; }
+.mega-overview { font-weight: 400 !important; }
+.svc-toggle { border-radius: 999px; font-family: var(--ts-font); }
+.svc-children { border-left: 1px solid var(--ts-turquoise); }
+
+/* Search results: shared typographic polish */
+mark { background: var(--ts-turquoise-25); font-weight: 500; }
+.result h3 { font-weight: 400; font-size: 1.25rem; }
+.result h3 a { color: var(--ts-black); }
+.result h3 a:hover { color: var(--ts-oxford); }
+.result-type { color: var(--ts-turquoise-dark); font-weight: 600; letter-spacing: 0.1em; }
+.result-meta { color: var(--ts-muted); }
+.result.has-avatar { grid-template-columns: 64px minmax(0, 1fr); }
+.result .wf-placeholder.avatar { width: 64px; aspect-ratio: 4 / 5; }
+.facet legend { font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.facet-opt { font-weight: 300; font-size: 0.9375rem; }
+.facet-opt input { accent-color: var(--ts-oxford); }
+.chip { border-radius: 999px; background: var(--ts-white); font-weight: 300; }
+.chip .x { border: 0; background: var(--ts-oxford-10); }
+.chip.scope { border-style: solid; border-color: var(--ts-turquoise); background: var(--ts-turquoise-25); }
+.cat-tab { font-weight: 300; }
+.cat-tab .n { font-size: 0.8125rem; }
+.banner { border-color: var(--ts-rule); border-left: 3px solid var(--ts-turquoise); }
+.banner-muted { border-style: solid; }
+.sr-count { color: var(--ts-black); font-weight: 300; font-size: 1.0625rem; }
+.pagination button { border-radius: 999px; min-width: 2.5rem; }
+.pagination button[aria-current="page"] { background: var(--ts-black); border-color: var(--ts-black); }
+.browse-card { border-color: var(--ts-rule); }
+.browse-card h3 { font-weight: 400; }
+.zero { border-style: solid; border-color: var(--ts-rule); }
+.qb-readout { border-left-color: var(--ts-turquoise); }
+.aside-box { border-color: var(--ts-rule); }
+.breadcrumb-item a { color: var(--ts-muted); }
+
+/* Typeahead */
+.ta-list { border-radius: 0; border-color: var(--ts-rule); box-shadow: 0 12px 32px rgba(0, 31, 73, 0.12); }
+.ta-option { font-weight: 300; }
+.ta-option[aria-selected="true"], .ta-option:hover { background: var(--ts-turquoise-25); outline: 0; box-shadow: inset 3px 0 0 var(--ts-oxford); }
+.ta-group { color: var(--ts-turquoise-dark); }
+
+/* Footer: quiet, ruled */
+footer { margin-top: 5rem; }
+.footer-column h4 { font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-column a { font-weight: 300; }
+
+/* Annotations stay as prototype chrome, but in the brand face */
+.wf-note { font-family: var(--ts-font); }
+
+/* --------------------------------------------------------------------------
+   Design switcher (prototype chrome, not part of the site)
+   -------------------------------------------------------------------------- */
+.design-switch {
+  position: fixed; left: 1rem; bottom: 1rem; z-index: 1500; display: flex; align-items: center; gap: 0.25rem;
+  background: #212E4A; color: #fff; border-radius: 999px; padding: 0.3rem 0.4rem 0.3rem 0.875rem;
+  font: 500 0.8125rem/1 system-ui, -apple-system, 'Segoe UI', sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+.design-switch span { margin-right: 0.25rem; opacity: 0.85; }
+.design-switch a { color: #fff; text-decoration: none; padding: 0.35rem 0.65rem; border-radius: 999px; }
+.design-switch a:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.design-switch a[aria-current="true"] { background: #F0574A; color: #fff; }
+.design-switch a:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+@media print { .design-switch { display: none; } }
+
+/* The browser's own clear button on search boxes, toned to the palette */
+input[type="search"]::-webkit-search-cancel-button { filter: grayscale(1); opacity: 0.6; cursor: pointer; }
+html[data-design="c"] .nav-flyout.mega input[type="search"]::-webkit-search-cancel-button,
+html[data-design="c"] .search-overlay input[type="search"]::-webkit-search-cancel-button { filter: grayscale(1) invert(1); }
+/* Wireframe captions that describe the layout rather than the content */
+.mega-featured-large .wf-meta { display: none; }
+
+/* ==========================================================================
+   Design B — "Tabbed"
+   After Hogan Lovells Cadwalader (three tabs under 'What we do') and
+   Gilbert + Tobin (clean, bold tabbing). White header, Oxford blue as the
+   working colour, turquoise tints to mark the selected tab. The Services
+   menu's three groups become tabs; every link in them is unchanged.
+   ========================================================================== */
+
+/* Header */
+header.sticky { background: var(--ts-white); border-bottom: 1px solid var(--ts-rule); }
+.nav-primary { background: var(--ts-white); border-bottom: 0; padding: 1rem 0 0.25rem; }
+.utility-list a { color: var(--ts-oxford); font-weight: 400; font-size: 0.9375rem; }
+.nav-secondary { background: var(--ts-white); border-bottom: 0; }
+.nav-secondary .nav-list { gap: 0.5rem; }
+.nav-secondary .nav-link { color: var(--ts-oxford); font-weight: 500; padding: 1rem 0.75rem 1.0625rem; border-bottom: 3px solid transparent; }
+.nav-secondary .nav-link:hover { text-decoration: none; border-bottom-color: var(--ts-oxford-25); }
+.nav-item.open > .nav-link { border-bottom-color: var(--ts-oxford); }
+.header-actions .btn { background: var(--ts-oxford); border-color: var(--ts-oxford); }
+.header-actions .btn:hover { background: var(--ts-black); border-color: var(--ts-black); }
+
+/* Mega panels */
+.nav-flyout.mega {
+  left: 0; right: 0; border: 0; border-top: 1px solid var(--ts-rule);
+  box-shadow: 0 20px 40px rgba(0, 31, 73, 0.12); padding: 1.75rem 2rem 2.25rem;
+}
+.flyout-backdrop { background: rgba(0, 31, 73, 0.18); }
+.mega-head { border-bottom: 0; padding-bottom: 0; margin-bottom: 1.5rem; }
+.mega-head .mega-overview { font-size: 1.25rem; font-weight: 500 !important; color: var(--ts-oxford); }
+.mega-head .mega-filter input { border: 1px solid var(--ts-oxford-25); background: var(--ts-white); padding: 0.75rem 1rem; font-size: 1rem; font-weight: 300; }
+.mega-col h5 { color: var(--ts-oxford); }
+.nav-flyout.mega .mega-col li a { color: var(--ts-black); }
+.nav-flyout.mega .mega-col li a:hover { color: var(--ts-oxford); background: none; text-decoration: underline; }
+.mega-grid.cols-3 { gap: 2rem; }
+.mega-featured { border-left: 0; background: var(--ts-light-grey); padding: 1.25rem; }
+.mega-featured .result-type { color: var(--ts-oxford); }
+.mega-featured-large .featured-title { font-weight: 400; font-size: 1.25rem; line-height: 1.3; }
+.mega-featured-large .featured-title a { color: var(--ts-oxford); }
+
+/* Services as tabs: a vertical rail on the left, the chosen group on the right */
+#mega-svc-browse.has-svc-tabs { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 0; border-top: 1px solid var(--ts-rule); }
+#mega-svc-browse.has-svc-tabs[hidden] { display: none; }
+.svc-tabs { display: flex; flex-direction: column; border-right: 1px solid var(--ts-rule); padding: 0.75rem 0; }
+.svc-tab {
+  font: 400 1.375rem/1.2 var(--ts-font); text-align: left; color: var(--ts-oxford); background: none; cursor: pointer;
+  border: 0; border-left: 3px solid transparent; padding: 0.875rem 1.25rem;
+}
+.svc-tab:hover { background: var(--ts-oxford-10); }
+.svc-tab[aria-selected="true"] { background: var(--ts-turquoise-25); border-left-color: var(--ts-oxford); font-weight: 500; }
+.svc-tab:focus-visible { outline: 2px solid var(--ts-oxford); outline-offset: -2px; }
+.svc-tabpanels { padding: 1.25rem 0 0.5rem 2.5rem; }
+.svc-tabpanel { display: none; }
+.svc-tabpanel.is-active { display: block; }
+.svc-tabpanel h5 { display: none; }
+.svc-tabpanel ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem 2.5rem; }
+.nav-flyout.mega .svc-tabpanel li a { font-size: 1.25rem; font-weight: 300; padding: 0.75rem 0; border-bottom: 1px solid var(--ts-rule); }
+.nav-flyout.mega .svc-tabpanel li a:hover { text-decoration: none; color: var(--ts-oxford); border-bottom-color: var(--ts-oxford); }
+
+/* Search overlay: a white panel dropping from the top */
+.wf-modal.search-overlay { background: rgba(0, 31, 73, 0.35); padding-top: 0; }
+.search-overlay .wf-modal-panel { max-width: none; width: 100%; padding: 2.5rem max(1.5rem, calc((100vw - 1100px) / 2)) 3rem; box-shadow: 0 20px 40px rgba(0, 31, 73, 0.2); }
+.search-overlay h2 { font-weight: 300; font-size: 1.75rem; color: var(--ts-oxford); margin-bottom: 1.25rem; }
+.search-overlay input[type="search"] { font-size: 1.25rem; padding: 0.875rem 1rem; border-color: var(--ts-oxford); }
+
+/* Results page: bold tabs, as Gilbert + Tobin */
+.search-hero { background: var(--ts-light-grey); border: 0; padding: 1.5rem; }
+.search-hero .search-row input { font-size: 1.25rem; padding: 0.75rem 1rem; border-color: var(--ts-oxford-25); }
+.cat-tabs { border-bottom: 1px solid var(--ts-oxford-25); gap: 0; }
+.cat-tab { padding: 0.875rem 1.25rem; border: 0; border-bottom: 3px solid transparent; border-radius: 0; color: var(--ts-oxford); font-weight: 400; }
+.cat-tab:hover:not([disabled]) { background: var(--ts-oxford-10); }
+.cat-tab[aria-pressed="true"] { border: 0; border-bottom: 3px solid var(--ts-oxford); background: var(--ts-turquoise-25); font-weight: 600; margin-bottom: -1px; }
+.facet legend { color: var(--ts-oxford); }
+
+/* Footer: black, as on the live site */
+footer { background: var(--ts-black); border-top: 0; color: #CFCFCF; }
+.footer-column h4 { color: var(--ts-white); }
+.footer-column a { color: #E5E5E5; }
+.footer-column a:hover { color: var(--ts-turquoise); }
+.footer-bottom { border-top-color: #333; color: #A8A8A8; }
+
+/* ==========================================================================
+   Phone and tablet adjustments, applied after every design.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .mega-grid.cols-3 .mega-col + .mega-col { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .nav-flyout.mega { padding: 0.75rem 0 1.25rem; box-shadow: none; border: 0; }
+  .mega-head .mega-overview { font-size: 1.125rem; }
+  .mega-featured { border-left: 0; padding-left: 0; }
+  .mega-grid.cols-3, .mega-grid.cols-3-featured { gap: 1.25rem; }
+  .search-overlay input[type="search"] { font-size: 1.375rem; }
+  .search-hero .search-row input { font-size: 1.125rem; }
+  .search-overlay .wf-modal-panel { padding: 1.5rem 1rem; }
+  .cat-tabs { gap: 0.75rem; }
+  .design-switch { left: 0.5rem; bottom: 0.5rem; font-size: 0.75rem; }
+
+  /* Design B: on a phone the three groups simply stack, as in the wireframe */
+  #mega-svc-browse.has-svc-tabs { display: block; border-top: 0; }
+  .svc-tabs { display: none; }
+  .svc-tabpanels { padding: 0; }
+  .svc-tabpanel { display: block; margin-bottom: 1.25rem; }
+  .svc-tabpanel h5 { display: block; }
+  .svc-tabpanel ul { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .nav-flyout.mega .svc-tabpanel li a { font-size: 1.0625rem; padding: 0.5rem 0; }
+
+  /* Design C: the open phone menu stays on the black header */
+  html[data-design="c"] .nav-secondary .nav-item { border-top-color: #333; }
+  html[data-design="c"] .nav-flyout.mega { background: var(--ts-black); }
+}
