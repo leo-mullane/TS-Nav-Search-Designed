@@ -47,5 +47,6 @@ TS-Search-Nav first and copied into `src/` here.
 From Travers Smith's design requirements (November 2026) and the design system
 measured from traverssmith.com: black, Oxford blue and turquoise with tints; no
 aubergine, fossil or copper; lighter weights and line work rather than block
-colour; Cera Pro (Outfit is the visible stand-in, as Cera Pro is licensed); no
+colour; Cera Pro (Outfit is the visible stand-in, as Cera Pro is licensed); the
+logo (`designs/ts-logo.svg`) is the one served on traverssmith.com, inlined at build; no
 icons in the navigation; images only on the featured item, uploaded by the firm.

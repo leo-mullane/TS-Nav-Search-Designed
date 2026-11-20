@@ -53,6 +53,11 @@ function copyDir(from, to) {
   }
 }
 
+/* Travers Smith's own logo, as served in the header of traverssmith.com
+   (November 2026). Inlined so each design can colour it with CSS. */
+const LOGO = fs.readFileSync(path.join(designsDir, 'ts-logo.svg'), 'utf8').trim();
+const LOGO_PLACEHOLDER = '<span class="wf-placeholder logo">Travers Smith logo</span>';
+
 let pages = 0;
 for (const d of DESIGNS) {
   const out = path.join(root, d);
@@ -70,6 +75,7 @@ for (const d of DESIGNS) {
 
   const build = (file, rel) => {
     let html = resolve(fs.readFileSync(file, 'utf8'))
+      .replace(LOGO_PLACEHOLDER, LOGO)
       .replace(/<html lang="en-GB">/, '<html lang="en-GB" data-design="' + d + '">')
       .replace('</body>', '  <script src="~/js/design.js"></script>\n</body>')
       .replace(/(href|src|action)="~\//g, '$1="' + prefixFor(rel));

@@ -3,8 +3,7 @@
 
    Loaded after every other script. It changes no behaviour of the
    navigation or search; it only:
-   1. swaps the logo placeholder for a typographic wordmark (a stand-in for
-      Travers Smith's own logo file),
+   1. labels the image placeholders,
    2. adds the small design switcher (prototype chrome), and
    3. in Design B only, presents the Services menu's three groups as tabs,
       the approach Travers Smith liked on Hogan Lovells Cadwalader.
@@ -15,16 +14,6 @@
 
   var design = document.documentElement.getAttribute('data-design') || 'a';
   var NAMES = { a: 'A', b: 'B', c: 'C' };
-
-  /* 1. Wordmark ----------------------------------------------------------- */
-  function wordmark() {
-    document.querySelectorAll('.wf-placeholder.logo').forEach(function (ph) {
-      var mark = document.createElement('span');
-      mark.className = 'ts-wordmark';
-      mark.innerHTML = 'Travers<span>Smith</span>';
-      ph.replaceWith(mark);
-    });
-  }
 
   /* 2. Design switcher ---------------------------------------------------- */
   function switcher() {
@@ -134,7 +123,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    wordmark();
     imageLabels();
     switcher();
     if (design === 'b') serviceTabs();

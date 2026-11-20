@@ -6,6 +6,7 @@
 }
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
+  .site-logo { width: 124px; }
   .nav-flyout.mega { padding: 0.75rem 0 1.25rem; box-shadow: none; border: 0; }
   .mega-head .mega-overview { font-size: 1.125rem; }
   .mega-featured { border-left: 0; padding-left: 0; }

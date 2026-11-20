@@ -72,7 +72,10 @@ input[type="text"], input[type="email"], input[type="search"], select, textarea 
 }
 input[type="search"]:focus, input[type="text"]:focus, select:focus { outline: 2px solid var(--ts-oxford); outline-offset: 0; border-color: var(--ts-oxford); }
 
-/* Wordmark: a stand-in for the real logo file, drawn in type */
+/* Travers Smith's logo (inlined SVG, coloured with currentColor) */
+.site-logo { display: block; width: 150px; height: auto; color: var(--ts-black); }
+.site-bar > a:hover .site-logo, .site-bar > a:focus-visible .site-logo { color: var(--ts-oxford); }
+/* Typographic wordmark, kept only as a fallback */
 .ts-wordmark { display: inline-block; font-weight: 600; font-size: 1.0625rem; line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ts-black); }
 .ts-wordmark span { display: block; padding-left: 1.35em; }
 .ts-wordmark:hover { color: inherit; }
@@ -239,6 +242,7 @@ footer { background: var(--ts-light-grey); border-top: 1px solid var(--ts-rule);
 }
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
+  .site-logo { width: 124px; }
   .nav-flyout.mega { padding: 0.75rem 0 1.25rem; box-shadow: none; border: 0; }
   .mega-head .mega-overview { font-size: 1.125rem; }
   .mega-featured { border-left: 0; padding-left: 0; }
